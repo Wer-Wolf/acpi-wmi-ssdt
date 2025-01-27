@@ -1,0 +1,10 @@
+[WMI, Dynamic, Provider("WmiProv"), Locale("MS\\0x409"), Description("Class for testing the behaviour of the ACPI-WMI mapper"), guid("{61D2AA9C-3AE7-4B02-BA27-70DEDED3E102}")]
+class AcpiMapperTest
+{
+	[key, read] string InstanceName;
+	[read] boolean Active;
+
+	[WMIDataId(1), read, write, Description("Current enable value")] uint32 CurrentEnableStatus;
+	
+	[WMIDataId(2), read, write, Description("Enable value during set")] uint32 SetEnableStatus;
+};
